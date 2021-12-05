@@ -10,15 +10,15 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         moveToLoginScreen()
     }
 
     private fun moveToLoginScreen() {
         android.os.Handler().postDelayed(
             {
-                startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
-            }, 3000)
+            }, 3000
+        )
     }
 }
