@@ -30,23 +30,31 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val array: ArrayList<User> = ArrayList()
         array.add(User("test@test.com", "1234"))
-        array.add(User("user1@test.com", "12345"))
-        array.add(User("user2@test.com", "123456"))
+        array.add(User("u@test.com", "12345"))
+        array.add(User("b@test.com", "123456"))
         btnLogin?.setOnClickListener {
             val username = etUsername?.text.toString()
-            val pssword = etPassword?.text.toString()
+            val password = etPassword?.text.toString()
 
-            val user = User(username, pssword)
+            val user = User(username, password)
             for (userArray in array) {
                 if (userArray.email == user.email &&
                     userArray.password == user.password &&
                     checkBox?.isChecked == true){
+                        finish()
                     val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("email",userArray.email)
                     startActivity(intent)
-                    Toast.makeText(this, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
                     break
-                }else{
-                    Toast.makeText(this, "Check your date", Toast.LENGTH_SHORT).show()
+                }else if (etUsername?.text?.isEmpty() == true){
+                    etUsername?.setError("Enter your email")
+                } else if(etPassword?.text?.isEmpty() == true){
+                    etPassword?.setError("Enter your password")
+
+                } else if (checkBox?.isChecked != true){
+                    checkBox?.setError("Please checked terms")
+
                 }
             }
         }
