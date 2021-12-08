@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             app:titleTextColor="@color/white"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/gradiant_toolbar"/>
+            android:background="#5103C1"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
            android:id="@+id/fab"
@@ -26,12 +26,25 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#A272F8"
+            android:backgroundTint="#5103C1"
             android:src="@drawable/ic_baseline_add_24"
             app:tint="@color/white"
             tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            tools:listitem="@layout/item_layout"
+            android:layout_below="@id/toolbar"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         
     </RelativeLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

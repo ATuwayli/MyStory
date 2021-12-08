@@ -58,20 +58,5 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-//        btnLogin?.setOnClickListener {
-//            if(etUsername?.text?.isEmpty() == true
-//                || etPassword?.text?.isEmpty() == true
-//                || checkBox?.isChecked != true){
-//                Toast.makeText(this, "Enter your date", Toast.LENGTH_SHORT).show()
-//            } else{
-//                Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-//
-//            }
-//        }
-
     }
-
-
 }
