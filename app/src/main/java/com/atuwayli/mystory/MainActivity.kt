@@ -10,10 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -22,9 +24,10 @@ class MainActivity : AppCompatActivity() {
     private var toolbar:Toolbar? = null
     private var navView:NavigationView? = null
     private var recyclerView: RecyclerView? = null
-    private var imageViewProfile: ImageView? = null
+    private var imageText: TextView? = null
     private var tvTitle: TextView? = null
-    private var tvDescription: TextView? = null
+    private var tvSubTitle: TextView? = null
+    private var fab: FloatingActionButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,21 +43,18 @@ class MainActivity : AppCompatActivity() {
         drawerClicks()
         updateEmailHeader(email!!)
         prepareRecyclerView()
+        openAddStory()
 
 
 
     }
 
-     private fun prepareRecyclerView() {
-        val array: ArrayList<Story> = ArrayList()
-        array.add(Story("Week two", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week three", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week four", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week five", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week six", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week seven", "I learned arrays and loops and their control", R.drawable.icon))
-        array.add(Story("Week eight", "I learned arrays and loops and their control", R.drawable.icon))
 
+
+    private fun prepareRecyclerView() {
+        val array: ArrayList<Story> = ArrayList()
+        array.add(Story("This is title of story", "I learned arrays and loops and their control",
+            "A","A"))
 
 
 
@@ -65,8 +65,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView?.adapter = customAdapter
 
     }
-
-
 
     private fun updateEmailHeader(email:String) {
        val headerView = navView?.getHeaderView(0)
@@ -87,8 +85,16 @@ class MainActivity : AppCompatActivity() {
                     startActivity(i)
                     true
                 }
+
                 else -> true
             }
+        }
+    }
+
+    private fun openAddStory() {
+        fab?.setOnClickListener {
+            val i = Intent(this,AddStoryActivity::class.java)
+            startActivity(i)
         }
     }
 
@@ -116,7 +122,8 @@ class MainActivity : AppCompatActivity() {
         navView =findViewById(R.id.navView)
         recyclerView =findViewById(R.id.recyclerview)
         tvTitle =findViewById(R.id.tvTitle)
-        tvDescription =findViewById(R.id.tvDescription)
-        imageViewProfile =findViewById(R.id.imageViewProfile)
+        tvSubTitle =findViewById(R.id.tvSubTitle)
+        imageText =findViewById(R.id.imageText)
+        fab =findViewById(R.id.fab)
     }
 }

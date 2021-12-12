@@ -17,9 +17,9 @@ class CustomAdapter(val array: ArrayList<Story>) : RecyclerView.Adapter<CustomAd
 
     override fun onBindViewHolder(holder: DataHolder, position: Int) {
         val person: Story = array[position]
-        holder.imageView.setImageResource(person.image)
-        holder.tvTitle.text = person.name
-        holder.tvDescription.text = person.description
+        holder.imageText.text = person.imageText
+        holder.tvTitle.text = person.title
+        holder.tvSubTitle.text = person.subTitle
     }
 
     override fun getItemCount(): Int {
@@ -27,8 +27,8 @@ class CustomAdapter(val array: ArrayList<Story>) : RecyclerView.Adapter<CustomAd
     }
 
     class DataHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageView: ImageView = view.findViewById(R.id.imageViewProfile)
+        val imageText: TextView = view.findViewById(R.id.imageText)
         val tvTitle: TextView = view.findViewById(R.id.tvTitle)
-        val tvDescription: TextView = view.findViewById(R.id.tvDescription)
+        val tvSubTitle: TextView = view.findViewById(R.id.tvSubTitle)
     }
 }
