@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_app"
     tools:context=".LoginActivity">
 
 
@@ -40,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:srcCompat="@drawable/icon" />
+        app:srcCompat="@drawable/icons" />
 
     <EditText
         app:backgroundTint="@null"
@@ -71,6 +72,7 @@
         android:textColor="@color/white"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
         tools:ignore="TextContrastCheck" />
@@ -80,20 +82,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Forgot password ?"
+        android:text="@string/forgot_password"
         android:textAlignment="center"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
         android:text="@string/i_accept_terms_and_conditions"
-        app:layout_constraintEnd_toEndOf="@+id/tvStatus"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#5103C1"
+    android:background="@color/background_app"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -23,7 +23,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/username"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email_email_com"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/tvUsername"
         app:layout_constraintTop_toBottomOf="@+id/tvUsername" />

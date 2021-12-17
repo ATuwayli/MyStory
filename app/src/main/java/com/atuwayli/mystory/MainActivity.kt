@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,10 +24,12 @@ class MainActivity : AppCompatActivity() {
     private var drawer:DrawerLayout? = null
     private var toolbar:Toolbar? = null
     private var navView:NavigationView? = null
+
     private var recyclerView: RecyclerView? = null
-    private var imageText: TextView? = null
+    private var storyLetter: TextView? = null
     private var tvTitle: TextView? = null
     private var tvSubTitle: TextView? = null
+
     private var fab: FloatingActionButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setupDrawer()
         drawerClicks()
         updateEmailHeader(email!!)
-        prepareRecyclerView()
+        displayStories()
         openAddStory()
 
 
@@ -51,18 +54,30 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun prepareRecyclerView() {
-        val array: ArrayList<Story> = ArrayList()
-        array.add(Story("This is title of story", "I learned arrays and loops and their control",
-            "A","A"))
+    private fun displayStories() {
+        val storiesArray: ArrayList<Story> = ArrayList()
+        storiesArray.add(Story(getString(R.string.title_one),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_two),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_four),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_five),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_sixth),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_seventh),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_eight),getString(R.string.subtitle_one),getString(R.string.disc_one)))
 
 
 
-
-        val customAdapter: CustomAdapter = CustomAdapter(array)
-        recyclerView?.layoutManager = LinearLayoutManager(this,
-            LinearLayoutManager.VERTICAL, false)
+        val customAdapter: CustomAdapter = CustomAdapter(storiesArray,this)
         recyclerView?.adapter = customAdapter
+
+        // تم الاستغناء عن هذا الكود
+        //        recyclerView?.layoutManager = LinearLayoutManager(this,
+        //        LinearLayoutManager.VERTICAL, false)
+        // تم استخدام هذا الكود بدلا عنه
+        // in activity_main.xml/recyclerview
+        // app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+
 
     }
 
@@ -123,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView =findViewById(R.id.recyclerview)
         tvTitle =findViewById(R.id.tvTitle)
         tvSubTitle =findViewById(R.id.tvSubTitle)
-        imageText =findViewById(R.id.imageText)
+        storyLetter =findViewById(R.id.storyLetter)
         fab =findViewById(R.id.fab)
     }
 }

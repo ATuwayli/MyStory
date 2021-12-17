@@ -15,4 +15,43 @@
     <string name="subtitle">This is Subtitle ..</string>
     <string name="todo">TODO</string>
     <string name="email_email_com">email@email.com</string>
+    <string name="title_one">First week of online camp</string>
+    <string name="title_two">Second week of online camp</string>
+    <string name="title_three">Third week of online camp</string>
+    <string name="title_four">Fourth week of online camp</string>
+    <string name="title_five">Fifth week of online camp</string>
+    <string name="title_sixth">Sixth week of online camp</string>
+    <string name="title_seventh">Seventh week of online camp</string>
+    <string name="title_eight">Eight week of online camp</string>
+    <string name="subtitle_one">Lorem Ipsum is simply dummy text</string>
+    <string name="disc_one">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industrys
+                            standard dummy text ever since the 1500s, when an unknown printer
+                            took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                            typesetting industry. Lorem Ipsum has been the industrys
+                            standard dummy text ever since the 1500s, when an unknown printer
+                            took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                            typesetting industry. Lorem Ipsum has been the industrys
+                            standard dummy text ever since the 1500s, when an unknown printer
+                            took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem Ipsum....</string>
+    <string name="description_view">Description:</string>
+    <string name="title_view">Title:</string>
+    <string name="forgot_password">Forgot password ?</string>
+    <string name="title_here">Title here ..</string>
+    <string name="subtitle_here">Subtitle here ..</string>
+    <string name="description_here">Description here ..</string>
+    <string name="add_story">Add Story</string>
+    <string name="add_new_story">Add new Story</string>
+    <string name="Signin">Signin</string>
+
 </resources>

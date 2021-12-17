@@ -4,5 +4,4 @@ class Story(
     val title: String,
     val subTitle: String,
     val description: String,
-    val imageText: String,
 )

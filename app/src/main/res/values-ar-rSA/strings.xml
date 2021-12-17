@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">قصتي</string>
+    <string name="username">إسم الستخدم</string>
+    <string name="email">الإيميل الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">دخول</string>
+    <string name="status">الحالة</string>
+    <string name="i_accept_terms_and_conditions">أوافق على الأحكام و الشروط</string>
+    <string name="home">الرئيسية</string>
+    <string name="logout">خروج</string>
+    <string name="open">فتح</string>
+    <string name="close">إغلاق</string>
+    <string name="title">هنا عنوان القصة</string>
+    <string name="description">هنا وصف القصة</string>
+    <string name="subtitle">هنا العنوان الفرعي</string>
+    <string name="todo">TODO</string>
+    <string name="email_email_com">email@email.com</string>
+    <string name="title_one">الاسبوع الاول من المعسكر</string>
+    <string name="title_two">الاسبوع الثاني من المعسكر</string>
+    <string name="title_three">الاسبوع الثالث من المعسكر</string>
+    <string name="title_four">الاسبوع الرابع من المعسكر</string>
+    <string name="title_five">الاسبوع الخامس من المعسكر</string>
+    <string name="title_sixth">الاسبوع السادس من المعسكر</string>
+    <string name="title_seventh">الاسبوع السابع من المعسكر</string>
+    <string name="title_eight">الاسبوع الثامن من المعسكر</string>
+    <string name="subtitle_one">مثال للعنوان الفرعي</string>
+    <string name="disc_one">خلافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله أكثر من 2000 عام في القدم. قام البروفيسور "ريتشارد ماك لينتوك" (Richard McClintock) وهو بروفيسور اللغة اللاتينية في جامعة هامبدن-سيدني في فيرجينيا بالبحث عن أصول كلمة لاتينية غامضة في نص لوريم إيبسوم وهي "consectetur"، وخلال تتبعه لهذه الكلمة في الأدب اللاتيني اكتشف المصدر الغير قابل للشك. فلقد اتضح أن كلمات نص لوريم إيبسوم تأتي من الأقسام 1.10.32 و 1.10.33 من كتاب "حول أقاصي الخير والشر" (de Finibus Bonorum et Malorum) للمفكر شيشيرون (Cicero) والذي كتبه في عام 45 قبل الميلاد. هذا الكتاب هو بمثابة مقالة علمية مطولة في نظرية الأخلاق، وكان له شعبية كبيرة في عصر النهضة. السطر الأول من لوريم إيبسوم "Lorem ipsum dolor sit amet.." يأتي من سطر في القسم 1.20.32 من هذا الكتاب.
+للمهتمين قمنا بوضع نص لوريم إبسوم القياسي والمُستخدم منذ القرن الخامس عشر في الأسفل. وتم أيضاً توفير الأقسام 1.10.32 و 1.10.33 من "حول أقاصي الخير والشر" (de Finibus Bonorum et Malorum) لمؤلفه شيشيرون (Cicero) بصيغها الأصلية، مرفقة بالنسخ الإنكليزية لها والتي قام بترجمتها هـ.راكهام (H. Rackham) في عام 1914.                            </string>
+    <string name="description_view">الوصف:</string>
+    <string name="title_view">العنوان:</string>
+    <string name="forgot_password">نسيت كلمة المرور ؟</string>
+    <string name="title_here">عنوان القصة</string>
+    <string name="subtitle_here">العنوان الفرعي</string>
+    <string name="description_here">الوصف</string>
+    <string name="add_story">إضافة القصة</string>
+    <string name="add_new_story">إضافة قصة جديدة</string>
+    <string name="Signin">تسجيل</string>
+
+
+</resources>
