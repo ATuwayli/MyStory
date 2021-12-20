@@ -21,16 +21,17 @@ class CustomAdapter(val storiesList: ArrayList<Story>,val context: Context):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataHolder {
         val dataHolder: DataHolder = DataHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-        )
+            LayoutInflater.from(parent.context).inflate(R.layout.item_layout,
+                parent, false))
         return dataHolder
     }
 
     override fun onBindViewHolder(holder: DataHolder, position: Int) {
         val story: Story = storiesList[position]
-        holder.storyLetter.text = story.title.first().toString()
         holder.tvTitle.text = story.title
         holder.tvSubTitle.text = story.subTitle
+        holder.storyLetter.text = story.title.first().toString()
+
 
         generateColor(holder,position)
 

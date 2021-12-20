@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
@@ -21,6 +22,7 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private var tvEmail:TextView? = null
+    private var tvUsername:TextView? = null
     private var drawer:DrawerLayout? = null
     private var toolbar:Toolbar? = null
     private var navView:NavigationView? = null
@@ -37,85 +39,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val email = intent.getStringExtra("email")
         connectViews()
-        tvEmail?.text = email
 
+        tvEmail?.text = email
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupDrawer()
+      //  try {updateEmailHeader(email!!)} catch (e:NullPointerException){ }
+        updateEmailHeader(email)
         drawerClicks()
-        updateEmailHeader(email!!)
         displayStories()
         openAddStory()
 
-
-
     }
 
-
-
-    private fun displayStories() {
-        val storiesArray: ArrayList<Story> = ArrayList()
-        storiesArray.add(Story(getString(R.string.title_one),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_two),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_four),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_five),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_sixth),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_seventh),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_eight),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-
-
-
-        val customAdapter: CustomAdapter = CustomAdapter(storiesArray,this)
-        recyclerView?.adapter = customAdapter
-
-        // تم الاستغناء عن هذا الكود
-        //        recyclerView?.layoutManager = LinearLayoutManager(this,
-        //        LinearLayoutManager.VERTICAL, false)
-        // تم استخدام هذا الكود بدلا عنه
-        // in activity_main.xml/recyclerview
-        // app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-
-
-    }
-
-    private fun updateEmailHeader(email:String) {
-       val headerView = navView?.getHeaderView(0)
+    private fun updateEmailHeader(email:String?) {
+        val headerView = navView?.getHeaderView(0)
         val tvViewEmail = headerView?.findViewById<TextView>(R.id.tvEmail)
+        val tvViewUsername = headerView?.findViewById<TextView>(R.id.tvUsername)
         tvViewEmail?.text = email
-    }
-
-    private fun drawerClicks() {
-        navView?.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.home -> {
-                    drawer?.closeDrawer(GravityCompat.START)
-                    true
-                }
-                R.id.logout -> {
-                    finish()
-                    val i = Intent(this,LoginActivity::class.java)
-                    startActivity(i)
-                    true
-                }
-
-                else -> true
-            }
-        }
-    }
-
-    private fun openAddStory() {
-        fab?.setOnClickListener {
-            val i = Intent(this,AddStoryActivity::class.java)
-            startActivity(i)
-        }
+        tvViewUsername?.text = getString(R.string.my_name)
     }
 
     private fun setupDrawer() {
         val toggle = ActionBarDrawerToggle(this,drawer,R.string.open
-        ,R.string.close)
+            ,R.string.close)
         drawer?.addDrawerListener(toggle)
         toggle.drawerArrowDrawable.color = getColor(R.color.white)
         toggle.syncState()
@@ -132,6 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun connectViews() {
         tvEmail =findViewById(R.id.tvEmail)
+        tvUsername =findViewById(R.id.tvUsername)
         drawer =findViewById(R.id.drawer)
         toolbar =findViewById(R.id.toolbar)
         navView =findViewById(R.id.navView)
@@ -141,4 +90,90 @@ class MainActivity : AppCompatActivity() {
         storyLetter =findViewById(R.id.storyLetter)
         fab =findViewById(R.id.fab)
     }
+
+    private fun drawerClicks() {
+        navView?.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> {
+                    drawer?.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.logout -> {
+                    alertDialog()
+                    true
+                }
+                R.id.share -> {
+                    Toast.makeText(this, "Share code", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.send -> {
+                    Toast.makeText(this, "Send email code", Toast.LENGTH_SHORT).show()
+
+                    true
+                }
+                else -> true
+            }
+        }
+    }
+
+    private fun openAddStory() {
+        fab?.setOnClickListener {
+            val i = Intent(this,AddStoryActivity::class.java)
+            startActivity(i)
+        }
+    }
+
+    private fun displayStories() {
+        val storiesArray: ArrayList<Story> = ArrayList()
+        storiesArray.add(Story(getString(R.string.title_one),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_two),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+
+        val customAdapter = CustomAdapter(storiesArray,this)
+        recyclerView?.adapter = customAdapter
+
+        if (intent.getStringExtra("title") != null){
+            val title = intent.getStringExtra("title")
+            val subtitle = intent.getStringExtra("subtitle")
+            val desc = intent.getStringExtra("desc")
+
+            val newStory = Story(title!!,subtitle!!,desc!!)
+            storiesArray.add(newStory)
+            customAdapter.notifyDataSetChanged()
+
+        }
+
+        // تم الاستغناء عن هذا الكود
+        //        recyclerView?.layoutManager = LinearLayoutManager(this,
+        //        LinearLayoutManager.VERTICAL, false)
+        // تم استخدام هذا الكود بدلا عنه
+        // in activity_main.xml/recyclerview
+        // app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+
+
+    }
+
+    private fun intentToLogin(){
+        finish()
+        val i = Intent(this,LoginActivity::class.java)
+        startActivity(i)
+    }
+
+    private fun alertDialog() {
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle(getString(R.string.confirm_exit))
+        dialog.setIcon(R.drawable.ic_baseline_warning_24)
+        dialog.setMessage(getString(R.string.tv_dialog))
+        dialog.setPositiveButton(getString(R.string.yes)){ dialog, which -> intentToLogin()}
+        dialog.setNegativeButton(getString(R.string.no),null)
+        dialog.show()
+
+    }
+
+
+
+
+
+
 }

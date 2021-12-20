@@ -23,12 +23,40 @@ class AddStoryActivity : AppCompatActivity() {
 
         connectViews()
         setToolbarProperties()
+        fieldsValidation()
 
 
 
 
     }
 
+    private fun fieldsValidation() {
+        btnAddStory?.setOnClickListener {
+            val title = etAddTitle?.text.toString()
+            val subTitle = etAddSubtitle?.text.toString()
+            val desc = etAddDescription?.text.toString()
+
+            when {
+                title.isEmpty() -> {
+                    etAddTitle?.error = getString(R.string.enter_title)
+                }
+                subTitle.isEmpty() -> {
+                    etAddSubtitle?.error = getString(R.string.enter_subtitle)
+                }
+                desc.isEmpty() -> {
+                    etAddDescription?.error = getString(R.string.enter_desc)
+                }
+                else -> {
+                    this.finish()
+                    val i = Intent(this,MainActivity::class.java)
+                    i.putExtra("title",title)
+                    i.putExtra("subtitle",subTitle)
+                    i.putExtra("desc",desc)
+                    startActivity(i)
+                }
+            }
+        }
+    }
 
 
     private fun setToolbarProperties() {

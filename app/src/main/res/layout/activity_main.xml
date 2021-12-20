@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             app:titleTextColor="@color/white"
             android:layout_height="?attr/actionBarSize"
-            android:background="#5103C1"/>
+            android:background="@color/purple_500"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
            android:id="@+id/fab"
@@ -27,7 +27,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5103C1"
+            android:backgroundTint="@color/purple_700"
             android:src="@drawable/ic_baseline_add_24"
             app:tint="@color/white"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -35,12 +35,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
-            tools:listitem="@layout/item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@id/toolbar"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            tools:listitem="@layout/item_layout" />
 
         
     </RelativeLayout>
@@ -54,6 +54,8 @@
         app:menu="@menu/menu"
         app:headerLayout="@layout/nav_header"
         android:layout_gravity="start"/>
+
+
 
     <TextView
         android:id="@+id/tvEmail"

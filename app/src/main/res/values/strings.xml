@@ -53,5 +53,15 @@
     <string name="add_story">Add Story</string>
     <string name="add_new_story">Add new Story</string>
     <string name="Signin">Signin</string>
+    <string name="tv_dialog">Are you sure, You want to exit ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirm_exit">Confirm Exit</string>
+    <string name="my_name">Abdullah Almasoudi</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_subtitle">Enter subtitle</string>
+    <string name="enter_desc">Enter description</string>
 
 </resources>
