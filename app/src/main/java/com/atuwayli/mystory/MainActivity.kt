@@ -128,11 +128,11 @@ class MainActivity : AppCompatActivity() {
         storiesArray.add(Story(getString(R.string.title_one),getString(R.string.subtitle_one),getString(R.string.disc_one)))
         storiesArray.add(Story(getString(R.string.title_two),getString(R.string.subtitle_one),getString(R.string.disc_one)))
         storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
-        storiesArray.add(Story(getString(R.string.title_three),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_four),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_five),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_sixth),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_seventh),getString(R.string.subtitle_one),getString(R.string.disc_one)))
+        storiesArray.add(Story(getString(R.string.title_eight),getString(R.string.subtitle_one),getString(R.string.disc_one)))
 
         val customAdapter = CustomAdapter(storiesArray,this)
         recyclerView?.adapter = customAdapter
