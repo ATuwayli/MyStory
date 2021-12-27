@@ -30,8 +30,7 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val array: ArrayList<User> = ArrayList()
         array.add(User("test@test.com", "1234"))
-        array.add(User("u@test.com", "12345"))
-        array.add(User("b@test.com", "123456"))
+
         btnLogin?.setOnClickListener {
             val username = etUsername?.text.toString()
             val password = etPassword?.text.toString()
@@ -40,23 +39,26 @@ class LoginActivity : AppCompatActivity() {
             for (userArray in array) {
                 if (userArray.email == user.email &&
                     userArray.password == user.password &&
-                    checkBox?.isChecked == true){
+                    checkBox?.isChecked() == true ){
                         finish()
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("email",userArray.email)
                     startActivity(intent)
                     //Toast.makeText(this, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
                     break
-                }else if (etUsername?.text?.isEmpty() == true){
-                    etUsername?.setError("Enter your email")
-                } else if(etPassword?.text?.isEmpty() == true){
-                    etPassword?.setError("Enter your password")
 
-                } else if (checkBox?.isChecked != true){
+                } else if (etUsername?.text?.isEmpty() == true) {
+                    etUsername?.setError("here your email")
+                } else if (etPassword?.text?.isEmpty() == true) {
+                    etPassword?.setError("here your password")
+                } else if (checkBox?.isChecked() != true){
                     checkBox?.setError("Please checked terms")
+                } else if (userArray.email != user.email ||
+                            userArray.password != user.password){
+                    Toast.makeText(this, "Wrong entry information", Toast.LENGTH_SHORT).show()
+                }
 
                 }
             }
         }
-    }
 }

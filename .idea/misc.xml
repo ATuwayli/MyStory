@@ -12,12 +12,12 @@
         <entry key="app/src/main/res/drawable/gradiant_toolbar.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1" />
         <entry key="app/src/main/res/font/fonts.xml" value="0.21145833333333333" />
-        <entry key="app/src/main/res/layout/activity_add_story.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24261275272161742" />
+        <entry key="app/src/main/res/layout/activity_add_story.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18125" />
-        <entry key="app/src/main/res/layout/activity_story_details.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/item_layout.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_story_details.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.165" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.375" />
       </map>

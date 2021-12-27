@@ -41,7 +41,7 @@ class StoryDetailsActivity : AppCompatActivity() {
     }
 
     private fun currentDateAndTime() {
-        val simpleDateFormat = SimpleDateFormat("'Now' yyyy.MM.dd 'at' HH:mm")
+        val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd 'at' HH:mm")
         val currentDateAndTime: String = simpleDateFormat.format(Date())
         tvTime?.text = currentDateAndTime
     }
