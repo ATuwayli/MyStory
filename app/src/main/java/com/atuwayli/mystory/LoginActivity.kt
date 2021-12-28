@@ -40,11 +40,12 @@ class LoginActivity : AppCompatActivity() {
                 if (userArray.email == user.email &&
                     userArray.password == user.password &&
                     checkBox?.isChecked() == true ){
-                        finish()
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("email",userArray.email)
                     startActivity(intent)
                     //Toast.makeText(this, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
+                    finish()
+
                     break
 
                 } else if (etUsername?.text?.isEmpty() == true) {
